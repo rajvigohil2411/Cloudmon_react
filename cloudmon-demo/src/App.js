@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="/SavingCtgMore" element={<SavingCtgMore />}></Route>
+        <Route path="/settings/SavingCtgMore" element={<SavingCtgMore />}></Route>
       </Routes>
 
     </div>

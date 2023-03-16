@@ -7,44 +7,30 @@ import Typography from '@mui/material/Typography';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import HomeIcon from '@mui/icons-material/Home';
 import CustomSeparator from './Breadcrumbs.js';
-
+import Avatar from '@mui/material/Avatar';
+import image from '/Users/rajvibagohil2411/Desktop/Cloudmon-React/cloudmon-demo/src/assets/cards/avatar.jpeg'
+import ToggleButton from '@mui/material/ToggleButton';
+import { fontFamily } from '@mui/system';
 
 
 export default function Navbar(props) {
-
-
-
     return (
         <Box >
-            <AppBar position="static" style={{ backgroundColor: '#0f2d48', height: '40px', zIndex: '1' }}>
+            <AppBar position="static" style={{ backgroundColor: '#0f2d48', height: '50px', zIndex: '1' }}>
                 <Toolbar>
+
                     <CustomSeparator
-                        value1=<IconButton
-                            size="large"
-                            edge="start"
-                            color="inherit"
-                            aria-label="open drawer"
-                            sx={{ ml: 5, marginTop: '0' }}
-                        >
-                            <HomeIcon style={{ color: 'white' }} />
-                        </IconButton>
-                        value2=<Typography style={{ color: "white", fontSize: "15px", textAlign: "center" }}>GKE Cost Dashboard</Typography>
+
                     />
 
+
                     <Box sx={{ flexGrow: 1 }} />
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <b style={{ color: "white", padding: "15px" }}>rajviba.gohil@searce.com</b>&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        <IconButton
-                            size="large"
-                            edge="end"
-                            aria-label="account of current user"
-
-                            aria-haspopup="true"
-
-                            color="inherit"
-                        >
-                            <AccountCircle />
+                    <Box sx={{ display: 'flex' }}>
+                        <ToggleButton value="justify" aria-label="justified" disabled >
+                            <Typography style={{ color: "white", marginBottom: '5px', fontFamily: 'sans-serif' }}>rajviba.gohil@searce.com</Typography>
+                        </ToggleButton>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <IconButton sx={{ p: 0, m: 0, boxSizing: '20px' }}>
+                            <Avatar alt="Remy Sharp" src={image} />
                         </IconButton>
                     </Box>
 
@@ -52,26 +38,6 @@ export default function Navbar(props) {
             </AppBar>
 
 
-        </Box >
+        </Box>
     );
 }
-
-// <IconButton
-//                         size="large"
-//                         edge="start"
-//                         color="inherit"
-//                         aria-label="open drawer"
-//                         sx={{ ml: 5 }}
-//                     >
-//                         <HomeIcon style={{ color: 'white' }} />
-//                     </IconButton>
-//                     <IconButton
-//                         size="large"
-//                         edge="start"
-//                         color="inherit"
-//                         aria-label="open drawer"
-//                         sx={{ mr: 2 }}
-//                     >
-//                         <ChevronRightIcon style={{ color: 'white' }} />&nbsp;&nbsp;&nbsp;&nbsp;
-//                     </IconButton>
-//                     <Typography style={{ color: "white", fontSize: "15px", textAlign: "center" }}>GKE Cost Dashboard</Typography>

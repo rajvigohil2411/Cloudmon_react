@@ -6,6 +6,9 @@
 
   body{
     width: 100%;
+    height: 100%;
+    
+
     background: linear-gradient(
       to top,
       #dee5ed 0%,
@@ -13,7 +16,9 @@
       #0f2d48 85%,
       #0f2d48 100%
     );
-  } 
+    
+  }
+  
   .header-card{
     display:flex;
   

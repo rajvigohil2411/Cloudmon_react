@@ -6,12 +6,27 @@ import Dropdown from '../Components/Dropdown.js'
 import chart from "/Users/rajvibagohil2411/Desktop/Cloudmon-React/cloudmon-demo/src/assets/cards/chart.png";
 import BasicTable from '../Components/Table.js';
 import ToggleButtons from '../Components/Toggle.js'
-
+import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 export default function SavingCtgMore() {
     return <div>
-        <Grid container spacing={2} paddingLeft={"80px"} >
+        <Grid container spacing={2} paddingLeft={"80px"} paddingRight={"12px"} paddingBottom={"10px"} >
+
             <Grid item xs={12} display="flex" justifyContent="flex-start" >
-                <Typography style={{ color: "white", fontSize: "30px", textAlign: "left", paddingLeft: "50px", paddingTop: "0px", marginTop: "0px" }}>Saving Categories Detail View</Typography>
+                <div>
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="open drawer"
+                        sx={{ paddingLeft: "0px", paddingTop: "0px", marginTop: "40px", borderRadius: '5px' }}
+
+                    >
+                        <Link href='/settings' underline="hover"><ArrowBackIcon style={{ color: 'white' }} /></Link>
+                    </IconButton>
+                </div>
+                <Typography style={{ color: "white", fontSize: "30px", textAlign: "left", paddingLeft: "0px", paddingTop: "0px", marginTop: "30px" }}>Saving Categories Detail View</Typography>
             </Grid>
             <Grid item xs={12} display="flex" justifyContent="flex-start" marginTop='50px'>
                 <ToggleButtons style={{ paddingTop: '100px' }} />

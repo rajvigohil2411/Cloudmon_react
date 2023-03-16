@@ -5,13 +5,14 @@ import IconButton from '@mui/material/IconButton';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Link } from 'react-router-dom';
 import Piechart from './Doughnut'
+import { padding } from '@mui/system';
 //import gkeImage from "/Users/rajvibagohil2411/Desktop/Cloudmon-React/cloudmon-demo/src/images/cards/gke.png";
 
 
 export default function DoughnutchartCard(props) {
     console.log(props);
     return (
-        <Card sx={{ height: 400 }}>
+        <Card sx={{ height: 420, margin: '2px' }}>
             <Typography gutterBottom variant="h7" component="div">
                 <div className='flex-parent-element'>
                     <div style={{ paddingTop: '10px' }}>
@@ -20,7 +21,7 @@ export default function DoughnutchartCard(props) {
                     <div style={{ display: 'flex' }}>
                         <p style={{ paddingTop: '10px' }}>Detail View</p>
                         <IconButton >
-                            {props.title === 'Saving Categories' ? <Link to="/SavingCtgMore"><ChevronRightIcon /></Link> : <ChevronRightIcon />}
+                            {props.title === 'Saving Categories' ? <Link to="/settings/SavingCtgMore"><ChevronRightIcon /></Link> : <ChevronRightIcon />}
                         </IconButton>
                     </div>
                 </div>

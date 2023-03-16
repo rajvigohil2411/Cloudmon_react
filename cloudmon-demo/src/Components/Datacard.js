@@ -10,7 +10,7 @@ import { width } from '@mui/system';
 export default function Datacard(props) {
     console.log(props);
     return (
-        <Card sx={{ height: 400 }}>
+        <Card sx={{ height: 420 }}>
             <CardActionArea>
                 <div>
                     <CardContent>

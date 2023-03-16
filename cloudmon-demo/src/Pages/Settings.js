@@ -1,23 +1,38 @@
+import * as React from 'react';
+
 import { Typography } from '@mui/material'
 import Grid from '@mui/material/Grid'
 import Datacard from '../Components/Datacard.js';
 import DoughnutchartCard from '../Components/DoughnutchartCard.js'
-import Dropdown from '../Components/Dropdown.js'
-import chart from "/Users/rajvibagohil2411/Desktop/Cloudmon-React/cloudmon-demo/src/assets/cards/chart.png";
+import MultipleSelectCheckmarks from '../Components/Dropdown.js'
+import chart from "../assets/cards/chart.png";
 import BasicTable from '../Components/Table.js';
 
 
 export default function Settings() {
+    const [projectName, setProjectName] = React.useState(['Toyota',
+        'AMC123',
+        'Indigo',
+        'Rayn234',
+        'Restro123',
+        'adc345',
+        'fvbhdf4',
+        'fdvbdfvh223']);
     return (
         <div className="Analytics">
 
-            <Grid container spacing={2} paddingLeft={"80px"} >
+            <Grid container spacing={2} paddingLeft={"80px"} paddingRight={"12px"} paddingBottom={"10px"}>
                 <Grid item xs={12} display="flex" justifyContent="flex-start" >
-                    <Typography style={{ color: "white", fontSize: "30px", textAlign: "left", paddingLeft: "50px", paddingTop: "0px", marginTop: "0px" }}>Cost Recommendations</Typography>
+
+                    <Typography style={{ color: "white", fontSize: "30px", textAlign: "left", paddingLeft: "0px", paddingTop: "0px", marginTop: "30px" }}>Cost Recommendations</Typography>
                 </Grid>
                 <Grid item xs={4}>
-                    <Dropdown
-                        name="Project Id"
+                    <MultipleSelectCheckmarks
+                        name="Project ID"
+                        placeholder='ex. searce_Playground'
+                        dataArray={projectName}
+                        dataState={setProjectName}
+
                     />
                 </Grid>
 

@@ -18,9 +18,7 @@ export default function MultipleSelectCheckmarks(props) {
 
     const [personName, setPersonName] = React.useState([]);
 
-
     const handleChange = (event) => {
-
         const {
             target: { value },
         } = event;
@@ -28,7 +26,6 @@ export default function MultipleSelectCheckmarks(props) {
             // On autofill we get a stringified value.
             typeof value === 'string' ? value.split(',') : value,
         );
-        console.log("Pername", event);
     };
 
     return (
@@ -43,55 +40,58 @@ export default function MultipleSelectCheckmarks(props) {
                     value={personName}
                     onChange={handleChange}
                     input={<OutlinedInput label="Tag" />}
-                    renderValue={(selected) => selected.join(', ')}
+                    renderValue={(selected) => { console.log(selected); return selected.join(", ") }}
+                    MenuProps={{
+                        style: {
+                            maxHeight: 400
+                        },
+                    }}
+
                 >
-                    <div style={{ height: '350px', padding: '8px' }}>
-                        <div style={{ position: 'sticky', top: '0', zIndex: 999, backgroundColor: 'white', height: '100px' }} >
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }} >
-                                <Typography style={{ padding: '10px' }}><b>{props.name}</b></Typography>
-                                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                    <FormDialog
-                                        title={props.name}
-                                        placeholder={props.placeholder}
-                                        dataArray={props.dataArray}
-                                        dataState={props.dataState}
 
-                                    />
-                                    <Typography style={{ padding: '10px' }}><b>Add</b></Typography>
-                                </div>
+                    <div style={{ position: 'sticky', top: '0', zIndex: 999, backgroundColor: 'white', height: '100px' }} >
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }} >
+                            <Typography style={{ padding: '10px' }}><b>{props.name}</b></Typography>
+                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                <FormDialog
+                                    title={props.name}
+                                    placeholder={props.placeholder}
+                                    dataArray={props.dataArray}
+                                    dataState={props.dataState}
 
-
+                                />
+                                <Typography style={{ padding: '10px' }}><b>Add</b></Typography>
                             </div>
-                            <SearchBar />
+
+
                         </div>
-
-                        <div style={{ overflowX: 'scroll', height: '200px' }} >
-                            {props.dataArray.map((name) => (
-                                <MenuItem key={name} value={name}>
-                                    <Checkbox checked={personName.indexOf(name) > -1} />
-                                    <ListItemText primary={name} />
-                                </MenuItem>
-                            ))}
-                        </div>
-
-
-                        <div style={{ position: 'sticky', bottom: '0', backgroundColor: 'white' }}>
-                            <hr></hr>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px' }}>
-
-                                <IconButton >
-                                    <Typography style={{ padding: '2px' }} ><b> Cancel</b></Typography>
-
-
-                                </IconButton>
-                                <IconButton style={{ backgroundColor: '#569fe4', borderRadius: '5px', width: '100px' }}
-                                >
-                                    <Typography style={{ padding: '2px' }}><b> Apply </b></Typography>
-                                </IconButton>
-                            </div>
-                        </div>
-
+                        <SearchBar />
                     </div>
+
+                    {props.dataArray.map((name) => (
+                        <MenuItem key={name} value={name}>
+                            <Checkbox checked={personName.indexOf(name) > -1} />
+                            <ListItemText primary={name} />
+                        </MenuItem>
+                    ))}
+
+
+                    <div style={{ position: 'sticky', bottom: '0', backgroundColor: 'white' }}>
+                        <hr></hr>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px' }}>
+
+                            <IconButton >
+                                <Typography style={{ padding: '2px' }} ><b> Cancel</b></Typography>
+
+
+                            </IconButton>
+                            <IconButton style={{ backgroundColor: '#569fe4', borderRadius: '5px', width: '100px' }}
+                            >
+                                <Typography style={{ padding: '2px' }}><b>Apply</b></Typography>
+                            </IconButton>
+                        </div>
+                    </div>
+
 
                 </Select>
 

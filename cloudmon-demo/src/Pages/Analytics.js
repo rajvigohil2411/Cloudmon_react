@@ -5,8 +5,9 @@ import BarchartCard from '../Components/BarchartCard.js'
 import LinechartCard from '../Components/LinechartCard.js'
 import Grid from '@mui/material/Grid'
 import DoughnutchartCard from '../Components/DoughnutchartCard.js'
-import gkeImage from "/Users/rajvibagohil2411/Desktop/Cloudmon-React/cloudmon-demo/src/assets/cards/gke.png";
-import gcpImage from "/Users/rajvibagohil2411/Desktop/Cloudmon-React/cloudmon-demo/src/assets/cards/gcp.jpeg"
+import gkeImage from "../assets/cards/gke.png";
+import gcpImage from "../assets/cards/gcp.jpeg"
+import BasicSelect from '../Components/Dropdown_cluster.js';
 
 const data = {
     'labels': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -58,9 +59,10 @@ export default function Analytics() {
     return (
         <div className="Analytics">
 
-            <Grid container spacing={2} paddingLeft={"80px"} >
+
+            <Grid container spacing={2} paddingLeft={"80px"} paddingRight={"12px"} paddingBottom={"10px"} >
                 <Grid item xs={12} display="flex" justifyContent="flex-start" >
-                    <b style={{ color: "white", fontSize: "30px", textAlign: "left", paddingLeft: "50px", paddingTop: "0px", marginTop: "0px" }}>GKE Cost Dashboard</b>
+                    <b style={{ color: "white", fontSize: "30px", textAlign: "left", paddingLeft: "0px", paddingTop: "0px", marginTop: "30px" }}>GKE Cost Dashboard</b>
 
 
 
@@ -70,7 +72,7 @@ export default function Analytics() {
 
 
 
-                <Grid item xs={4}>
+                <Grid item xs={4} paddingLeft={"10px"} >
                     <MultipleSelectCheckmarks
                         name="Project ID"
                         placeholder='ex. searce_Playground'
@@ -114,7 +116,11 @@ export default function Analytics() {
                     <DoughnutchartCard title='Cluster Current Cost' />
                 </Grid>
                 <Grid item xs={6}>
-                    <BarchartCard title='Cost by Namespace' />
+                    <BarchartCard
+                        title='Cost by Namespace'
+                        detail_view='Display cluster Name'
+                        content={<BasicSelect />}
+                    />
                 </Grid>
 
                 <Grid item xs={12}>
@@ -125,7 +131,9 @@ export default function Analytics() {
                     <LinechartCard title='Request vs Consumption' />
                 </Grid>
                 <Grid item xs={6}>
-                    <BarchartCard title='Cost by Region' />
+                    <BarchartCard title='Cost by Region'
+                        detail_view='' />
+
                 </Grid>
                 <Grid item xs={6}>
                     <DoughnutchartCard title='Top 5 Highest Cost by Label' />

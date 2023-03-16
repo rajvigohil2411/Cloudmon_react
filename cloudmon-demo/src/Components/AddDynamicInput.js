@@ -41,7 +41,7 @@ function AddDynamicInput(props) {
             {val.map((data, i) => {
                 return (
                     <div style={{ width: '550px', display: 'flex' }}>
-                        <TextField label="Outlined" variant="outlined"
+                        <TextField variant="outlined"
 
 
                             autoFocus
@@ -75,7 +75,7 @@ function AddDynamicInput(props) {
                     </IconButton>
                     <IconButton style={{ backgroundColor: '#569fe4', borderRadius: '5px', width: '100px' }}
                         onClick={addData}>
-                        <Typography style={{ padding: '2px' }}><b> Add </b></Typography><DoneIcon />
+                        <Typography style={{ padding: '2px' }}><b>Add</b></Typography><DoneIcon />
                     </IconButton>
                 </div>
 

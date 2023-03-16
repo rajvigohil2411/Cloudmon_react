@@ -27,13 +27,13 @@ export default function ToggleButtons() {
             <ToggleButton value="right" aria-label="right aligned">
                 <Typography>Data Savings</Typography>
             </ToggleButton>
-            <ToggleButton value="justify" aria-label="justified" disabled>
+            <ToggleButton value="justify" aria-label="justified" >
                 <Typography>Network Savings</Typography>
             </ToggleButton>
-            <ToggleButton value="justify" aria-label="justified" disabled>
+            <ToggleButton value="justify" aria-label="justified" >
                 <Typography>Storage Savings</Typography>
             </ToggleButton>
-            <ToggleButton value="justify" aria-label="justified" disabled>
+            <ToggleButton value="justify" aria-label="justified" >
                 <Typography>Other Savings</Typography>
             </ToggleButton>
         </ToggleButtonGroup>

@@ -99,7 +99,7 @@ export default function MiniDrawer() {
                 </DrawerHeader>
                 <Divider />
                 <List sx={{ paddingLeft: '8px', backgroundColor: '#569fe4' }} >
-                    {['One', 'Two', 'Send email', 'Drafts', 'All mail', 'Trash', 'Spam'].map((text, index) => (
+                    {['One', 'Two', 'Send email', 'Drafts'].map((text, index) => (
                         <ListItem key={text} disablePadding sx={{ display: 'block', color: 'white' }}>
                             <ListItemButton
                                 sx={{
@@ -119,15 +119,13 @@ export default function MiniDrawer() {
                                 >
 
                                     {(() => {
-                                        switch (index % 7) {
+                                        switch (index % 4) {
 
                                             case 0: return <Link sx={{ textDecoration: 'none' }} to="/"><TimelineIcon sx={{ color: 'white' }} /></Link>;
                                             case 1: return <Link sx={{ textDecoration: 'none' }} to="/analytics"><AnalyticsIcon sx={{ color: 'white' }} /></Link>;
                                             case 2: return <Link sx={{ textDecoration: 'none' }} to="/settings"><BuildIcon sx={{ color: 'white' }} /></Link>;
-                                            case 3: return <VerifiedUserIcon />
-                                            case 4: return <SettingsIcon />
-                                            case 5: return <FolderIcon />
-                                            default: return <PermPhoneMsgIcon />;
+                                            default: return <VerifiedUserIcon />
+
                                         }
                                     })()}
                                 </ListItemIcon>
@@ -135,7 +133,41 @@ export default function MiniDrawer() {
                             </ListItemButton>
                         </ListItem>
                     ))}
-                </List >
+                </List>
+                <Divider style={{ height: '240px', backgroundColor: '#569fe4' }} />
+                <List sx={{ paddingLeft: '8px', backgroundColor: '#569fe4' }} >
+                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                        <ListItem key={text} disablePadding sx={{ display: 'block', color: 'white' }}>
+                            <ListItemButton
+                                sx={{
+                                    minHeight: 30,
+                                    justifyContent: open ? 'initial' : 'center',
+                                    px: 1,
+                                    color: 'white'
+                                }}
+                            >
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : 'auto',
+                                        justifyContent: 'center',
+                                        color: 'white'
+                                    }}
+                                >
+
+                                    {(() => {
+                                        switch (index % 3) {
+                                            case 1: return <PermPhoneMsgIcon />
+                                            case 2: return <FolderIcon />
+                                            default: return <SettingsIcon />
+                                        }
+                                    })()}
+                                </ListItemIcon>
+                                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                            </ListItemButton>
+                        </ListItem>
+                    ))}
+                </List>
 
 
 
