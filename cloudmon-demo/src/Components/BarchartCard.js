@@ -2,11 +2,10 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Barchart from './Barchart.js'
 import BasicSelect from './Dropdown_cluster'
 //import gkeImage from "/Users/rajvibagohil2411/Desktop/Cloudmon-React/cloudmon-demo/src/images/cards/gke.png";
-
+import FreeSolo from './Autocomplete.js'
 
 
 export default function BarchartCard(props) {
@@ -19,11 +18,12 @@ export default function BarchartCard(props) {
                     <div style={{ paddingTop: '10px' }}>
                         <b>{props.title}</b>
                     </div>
-                    <div style={{ display: 'flex' }}>
-                        <BasicSelect
-                            title={props.detail_view} />
 
-                    </div>
+                    {props.component_name === 'Namespace' && <div style={{ display: 'flex' }}>
+                        <FreeSolo title='Display Cluster Name' />
+
+                    </div>}
+
                 </div>
 
 
@@ -31,7 +31,7 @@ export default function BarchartCard(props) {
             </Typography>
 
 
-            <Barchart />
+            <Barchart data={props.data} />
 
 
 

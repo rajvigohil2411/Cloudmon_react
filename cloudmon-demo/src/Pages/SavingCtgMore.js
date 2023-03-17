@@ -14,7 +14,7 @@ export default function SavingCtgMore() {
         <Grid container spacing={2} paddingLeft={"80px"} paddingRight={"12px"} paddingBottom={"10px"} >
 
             <Grid item xs={12} display="flex" justifyContent="flex-start" >
-                <div>
+                <div >
                     <IconButton
                         size="large"
                         edge="start"
@@ -28,7 +28,7 @@ export default function SavingCtgMore() {
                 </div>
                 <Typography style={{ color: "white", fontSize: "30px", textAlign: "left", paddingLeft: "0px", paddingTop: "0px", marginTop: "30px" }}>Saving Categories Detail View</Typography>
             </Grid>
-            <Grid item xs={12} display="flex" justifyContent="flex-start" marginTop='50px'>
+            <Grid item xs={12} display="flex" justifyContent="flex-start" marginTop='0px'>
                 <ToggleButtons style={{ paddingTop: '100px' }} />
             </Grid>
 

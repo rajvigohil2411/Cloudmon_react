@@ -9,29 +9,98 @@ import gkeImage from "../assets/cards/gke.png";
 import gcpImage from "../assets/cards/gcp.jpeg"
 import BasicSelect from '../Components/Dropdown_cluster.js';
 
-const data = {
+const line1data = {
     'labels': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     datasets: [{
         label: 'Request',
-        data: [10, 30, 30, 140, 5, 10, 30, 30, 140, 5, 45, 98],
+        data: [10, 30, 10, 20, 50, 10, 30, 30, 40, 20, 40, 10],
         borderColor: '#306dbe',
         borderWidth: 2,
-        pointBorderColor: 'aqua',
+        pointBorderColor: '#306dbe',
         fill: false
+
+    }]
+}
+const line2data = {
+    'labels': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    datasets: [{
+        label: 'Request',
+        data: [10, 30, 10, 20, 50, 10, 30, 30, 40, 20, 40, 10],
+        borderColor: '#306dbe',
+        borderWidth: 2,
+        pointBorderColor: '#306dbe',
+        fill: false,
+
 
     },
     {
         label: 'Consumption',
-        data: [100, 3, 20, 14, 57, 110, 40, 130, 10, 65, 85, 18],
-
+        data: [20, 30, 20, 30, 20, 10, 40, 30, 50, 10, 50, 10],
         borderColor: '#b3eddc',
         borderWidth: 2,
-        pointBorderColor: 'red',
+        pointBorderColor: '#b3eddc',
         fill: false
 
     }
     ]
 }
+
+const data_Barchart1 = {
+    'labels': ['Name Here', 'Name Here', 'Name Here', 'Name Here', 'Name Here'],
+    datasets: [{
+        label: 'My First Dataset',
+        data: [65, 59, 80, 81, 56],
+        backgroundColor: [
+            'rgba(48,109,190)',
+            'rgba(48,109,190)',
+            'rgba(48,109,190)',
+            'rgba(48,109,190)',
+            'rgba(48,109,190)'
+
+        ],
+        borderColor: [
+            'rgba(48,109,190)',
+            'rgba(48,109,190)',
+            'rgba(48,109,190)',
+            'rgba(48,109,190)',
+            'rgba(48,109,190)'
+
+        ],
+        borderWidth: 1,
+        barThickness: 4,
+        barPercentage: 0.9,
+        pointStyle: 'circle'
+
+    }]
+};
+const data_Barchart2 = {
+    'labels': ['Jharkhand', 'Odisha', 'Gujarat', 'Maharashtra', 'Tamilnadu'],
+    datasets: [{
+        label: 'My First Dataset',
+        data: [60, 50, 20, 8, 36],
+        backgroundColor: [
+            'rgba(48,109,190)',
+            'rgba(48,109,190)',
+            'rgba(48,109,190)',
+            'rgba(48,109,190)',
+            'rgba(48,109,190)'
+
+        ],
+        borderColor: [
+            'rgba(48,109,190)',
+            'rgba(48,109,190)',
+            'rgba(48,109,190)',
+            'rgba(48,109,190)',
+            'rgba(48,109,190)'
+
+        ],
+        borderWidth: 1,
+        barThickness: 4,
+        barPercentage: 0.9,
+        pointStyle: 'circle'
+
+    }]
+};
 
 
 
@@ -113,30 +182,41 @@ export default function Analytics() {
 
 
                 <Grid item xs={6}>
-                    <DoughnutchartCard title='Cluster Current Cost' />
+                    <DoughnutchartCard title='Cluster Current Cost'
+                        component_name='Cluster Current Cost' />
                 </Grid>
                 <Grid item xs={6}>
                     <BarchartCard
                         title='Cost by Namespace'
                         detail_view='Display cluster Name'
-                        content={<BasicSelect />}
+                        data={data_Barchart1}
+                        component_name='Namespace'
                     />
                 </Grid>
 
+
                 <Grid item xs={12}>
                     <LinechartCard
-                        {...data} title='Total GKE Cost' />
+                        data={line1data}
+                        title='Total GKE Cost'
+                        component_name='GKE Cost' />
                 </Grid>
                 <Grid item xs={12}>
-                    <LinechartCard title='Request vs Consumption' />
+                    <LinechartCard
+                        data={line2data}
+                        title='Request vs Consumption'
+                        component_name='Request vs Consumption' />
                 </Grid>
                 <Grid item xs={6}>
                     <BarchartCard title='Cost by Region'
-                        detail_view='' />
+                        detail_view=''
+                        data={data_Barchart2}
+                        component_name='Region' />
 
                 </Grid>
                 <Grid item xs={6}>
-                    <DoughnutchartCard title='Top 5 Highest Cost by Label' />
+                    <DoughnutchartCard title='Top 5 Highest Cost by Label'
+                        component_name='Cost by Label' />
                 </Grid>
 
             </Grid>

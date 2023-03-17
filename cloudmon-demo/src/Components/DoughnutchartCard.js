@@ -16,10 +16,10 @@ export default function DoughnutchartCard(props) {
             <Typography gutterBottom variant="h7" component="div">
                 <div className='flex-parent-element'>
                     <div style={{ paddingTop: '10px' }}>
-                        <p>{props.title}</p>
+                        <b>{props.title}</b>
                     </div>
                     <div style={{ display: 'flex' }}>
-                        <p style={{ paddingTop: '10px' }}>Detail View</p>
+                        <Typography style={{ paddingTop: '10px', fontWeight: 'bold' }}>Detail View</Typography>
                         <IconButton >
                             {props.title === 'Saving Categories' ? <Link to="/settings/SavingCtgMore"><ChevronRightIcon /></Link> : <ChevronRightIcon />}
                         </IconButton>
@@ -30,10 +30,11 @@ export default function DoughnutchartCard(props) {
                 <hr></hr>
             </Typography>
             <Typography gutterBottom variant="h7" component="div">
-                <div className='flex-parent-element' >
+                {props.component_name === 'Cluster Current Cost' && <div className='flex-parent-element'>
                     <div>
                         <Piechart />
                     </div>
+
                     <div className='first' >
 
                         <ul>
@@ -43,19 +44,33 @@ export default function DoughnutchartCard(props) {
                             <li>Cluster_name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1.9M (12.98%)</li>
                             <li>Cluster_name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1.9M (12.98%)</li>
                         </ul>
-
-
-
-
                     </div>
 
-                </div>
+                </div>}
+                {props.component_name === 'Cost by Label' && <div className='flex-parent-element'>
+                    <div >
+                        <Piechart />
+                    </div>
+
+                    <div className='first'  >
+
+                        <ul>
+                            <li>Label name sample cas.. &nbsp;$1.9M (12.98%)</li>
+                            <li>Label name sample cascc &nbsp;$1.9M (12.98%)</li>
+                            <li>Label name sample cascc &nbsp;$1.9M (12.98%)</li>
+                            <li>Label name sample cascc &nbsp;$1.9M (12.98%)</li>
+                            <li>Label name sample cascc &nbsp;$1.9M (12.98%)</li>
+                        </ul>
+                    </div>
+
+                </div>}
+
 
             </Typography>
 
 
 
 
-        </Card >
+        </Card>
     );
 }

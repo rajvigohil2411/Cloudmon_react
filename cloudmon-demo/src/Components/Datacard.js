@@ -33,7 +33,7 @@ export default function Datacard(props) {
                     </CardContent>
                     <CardMedia
                         component="img"
-                        sx={{ height: 150, width: 1000 }}
+                        sx={{ height: 210, width: 1000 }}
 
                         style={{}}
                         image={props.img}

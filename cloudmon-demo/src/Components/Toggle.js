@@ -17,24 +17,26 @@ export default function ToggleButtons() {
             exclusive
             onChange={handleAlignment}
             aria-label="text alignment"
+
+
         >
-            <ToggleButton value="left" aria-label="left aligned">
-                <Typography>Computer Savings</Typography>
+            <ToggleButton style={{ color: 'white', borderColor: 'grey' }}>
+                <Typography style={{ textTransform: 'none', fontWeight: 'bold' }}>Computer Savings</Typography>
             </ToggleButton>
-            <ToggleButton value="center" aria-label="centered">
-                <Typography>Database Savings</Typography>
+            <ToggleButton style={{ color: 'white', borderColor: 'grey' }}>
+                <Typography style={{ textTransform: 'none', fontWeight: 'bold' }}>Database Savings</Typography>
             </ToggleButton>
-            <ToggleButton value="right" aria-label="right aligned">
-                <Typography>Data Savings</Typography>
+            <ToggleButton style={{ color: 'white', borderColor: 'grey' }}>
+                <Typography style={{ textTransform: 'none', fontWeight: 'bold' }}>Data Savings</Typography>
             </ToggleButton>
-            <ToggleButton value="justify" aria-label="justified" >
-                <Typography>Network Savings</Typography>
+            <ToggleButton style={{ color: 'white', borderColor: 'grey' }}>
+                <Typography style={{ textTransform: 'none', fontWeight: 'bold' }}>Network Savings</Typography>
             </ToggleButton>
-            <ToggleButton value="justify" aria-label="justified" >
-                <Typography>Storage Savings</Typography>
+            <ToggleButton style={{ color: 'white', borderColor: 'grey' }}>
+                <Typography style={{ textTransform: 'none', fontWeight: 'bold' }}>Storage Savings</Typography>
             </ToggleButton>
-            <ToggleButton value="justify" aria-label="justified" >
-                <Typography>Other Savings</Typography>
+            <ToggleButton disabled style={{ color: 'white', borderColor: 'grey' }} >
+                <Typography style={{ textTransform: 'none', fontWeight: 'bold' }}>Other Savings</Typography>
             </ToggleButton>
         </ToggleButtonGroup>
     );

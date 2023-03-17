@@ -36,6 +36,7 @@ export default function MultipleSelectCheckmarks(props) {
                 <Select
                     labelId="demo-multiple-checkbox-label"
                     id="demo-multiple-checkbox"
+                    limitTags={2}
                     multiple
                     value={personName}
                     onChange={handleChange}
@@ -78,18 +79,25 @@ export default function MultipleSelectCheckmarks(props) {
 
                     <div style={{ position: 'sticky', bottom: '0', backgroundColor: 'white' }}>
                         <hr></hr>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', margin: '2px' }}>
+                            <div>
+                                <Typography style={{ padding: '15px', color: 'GrayText' }} > 4 selected</Typography>
 
-                            <IconButton >
-                                <Typography style={{ padding: '2px' }} ><b> Cancel</b></Typography>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px' }}>
+
+                                <IconButton style={{ color: 'black' }} >
+                                    <Typography style={{ padding: '2px' }} ><b> Cancel</b></Typography>
 
 
-                            </IconButton>
-                            <IconButton style={{ backgroundColor: '#569fe4', borderRadius: '5px', width: '100px' }}
-                            >
-                                <Typography style={{ padding: '2px' }}><b>Apply</b></Typography>
-                            </IconButton>
+                                </IconButton>
+                                <IconButton style={{ color: 'black' }}
+                                >
+                                    <Typography style={{ padding: '2px' }}><b>Apply</b></Typography>
+                                </IconButton>
+                            </div>
                         </div>
+
                     </div>
 
 

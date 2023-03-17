@@ -19,44 +19,17 @@ ChartJS.register(
 )
 
 
-export default function Barchart() {
-    const labels = ['1', '2', '3', '4', '5', '6', '7'];
-
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'My First Dataset',
-            data: [65, 59, 80, 81, 56, 55, 78],
-            backgroundColor: [
-                'rgba(48,109,190)',
-                'rgba(48,109,190)',
-                'rgba(48,109,190)',
-                'rgba(48,109,190)',
-                'rgba(48,109,190)',
-                'rgba(48,109,190)',
-                'rgba(48,109,190)'
-            ],
-            borderColor: [
-                'rgba(48,109,190)',
-                'rgba(48,109,190)',
-                'rgba(48,109,190)',
-                'rgba(48,109,190)',
-                'rgba(48,109,190)',
-                'rgba(48,109,190)',
-                'rgba(48,109,190)'
-            ],
-            borderWidth: 1,
-            barThickness: 4,
-            barPercentage: 0.9,
-            pointStyle: 'circle'
-
-        }]
-    };
+export default function Barchart(props) {
+    console.log("Hello", props)
     const options = {
 
         title: {
             display: true,
             text: 'Bar Graph to show proficency1'
+        },
+        plugins: {
+            legend: false,
+
         },
         maintainAspectRatio: false,
         scales: {
@@ -89,13 +62,13 @@ export default function Barchart() {
 
 
     return (
-        <div >
+        <div>
 
             <Bar style={{ height: 350 }}
-                data={data} options={options} />
+                data={props.data} options={options} />
 
 
-        </div >
+        </div>
 
     )
 }

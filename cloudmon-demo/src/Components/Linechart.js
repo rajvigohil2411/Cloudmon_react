@@ -23,31 +23,10 @@ ChartJS.register(
 )
 
 export default function Linechart(props) {
-    const data = {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        datasets: [{
-            label: 'Request',
-            data: [10, 30, 30, 140, 5, 10, 30, 30, 140, 5, 45, 98],
-            borderColor: '#306dbe',
-            borderWidth: 3,
-            fill: false
 
-        },
-        {
-            label: 'Consumption',
-            data: [100, 3, 20, 14, 57, 110, 40, 130, 10, 65, 85, 18],
-
-            borderColor: '#b3eddc',
-            borderWidth: 3,
-
-            fill: false
-
-        }
-        ]
-    }
     const options = {
         plugins: {
-            legend: true,
+            legend: false,
             Filler: true
         },
         scales: {
@@ -79,14 +58,32 @@ export default function Linechart(props) {
     }
     return (
         <div >
+            {props.component_name === 'Request vs Consumption' && <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div style={{ width: '90%' }}>
+                    <Line style={{ height: '290px' }}
+                        data={props.data}
+                        options={options}
 
-            <Line style={{ height: '350px' }}
-                data={data}
-                options={options}
+                    />
+                </div>
 
-            />
+                <div style={{ justifyContent: 'center', padding: '30px' }}>
+                    <ul>
+                        <li>Request</li>
+                        <li>Consumption</li>
+                    </ul>
+                </div>
+
+            </div>}
+            {props.component_name === 'GKE Cost' && <div>
+                <Line style={{ height: '300px' }}
+                    data={props.data}
+                    options={options}
+
+                />
 
 
+            </div>}
         </div>
 
     )

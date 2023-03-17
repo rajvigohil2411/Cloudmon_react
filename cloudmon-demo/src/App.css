@@ -6,16 +6,18 @@
 
   body{
     width: 100%;
-    height: 100%;
+    
     
 
     background: linear-gradient(
       to top,
       #dee5ed 0%,
-      #dee5ed 85%,
-      #0f2d48 85%,
+      #dee5ed 60%,
+      #0f2d48 60%,
       #0f2d48 100%
     );
+    background-attachment: fixed;
+
     
   }
   
@@ -38,18 +40,19 @@
 
    
   }
- 
   li::marker {
-    color: hotpink;
-    
+    color: red; /* bullet color */
   }
+ .request > li::marker{
+  color: hotpink;
+ }
+  
   li{
     padding-top:20px;
   }
   .first{
-  margin:20px;
   
-  padding: 10px;
+  padding: 30px;
   justify-content: center;
   }
 .components{

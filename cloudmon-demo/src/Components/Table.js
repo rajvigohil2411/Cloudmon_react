@@ -49,11 +49,9 @@ export default function BasicTable(props) {
                         </div>
                     </div>
 
-
-                    <hr></hr>
                 </Typography>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                    <TableHead>
+                    <TableHead sx={{ borderColor: 'grey' }}>
                         <TableRow style={{ backgroundColor: '#e2e9f0' }}>
 
                             <TableCell align="right">Rank</TableCell>

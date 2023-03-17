@@ -23,10 +23,20 @@ export default function Piechart() {
     }
     const options = {
         aspectRatio: 1,
+
+        label: {
+            display: false
+        },
+
+        cutout: '65%',
+        plugins: {
+            legend: false,
+            Filler: true
+        }
         //responsive: true
     }
     return (
-        <div>
+        <div style={{ padding: '20px' }}>
             <Doughnut
                 data={data}
                 options={options}

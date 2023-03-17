@@ -27,7 +27,7 @@ export default function Navbar(props) {
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: 'flex' }}>
                         <ToggleButton value="justify" aria-label="justified" disabled >
-                            <Typography style={{ color: "white", marginBottom: '5px', fontFamily: 'sans-serif' }}>rajviba.gohil@searce.com</Typography>
+                            <Typography style={{ color: "white", marginBottom: '5px', textTransform: 'none' }}>rajviba.gohil@searce.com</Typography>
                         </ToggleButton>&nbsp;&nbsp;&nbsp;&nbsp;
                         <IconButton sx={{ p: 0, m: 0, boxSizing: '20px' }}>
                             <Avatar alt="Remy Sharp" src={image} />
