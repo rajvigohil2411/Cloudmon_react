@@ -10,15 +10,28 @@ import { Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import SearchBar from './SearchBar.js'
 import FormDialog from './Dialog.js';
-
-
+import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
 
 
 export default function MultipleSelectCheckmarks(props) {
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+        setPersonName([]);
+        setCounter([]);
+    };
 
     const [personName, setPersonName] = React.useState([]);
+    const [counter, setCounter] = React.useState(0);
 
     const handleChange = (event) => {
+        console.log("Hellloooo", event.target.value);
         const {
             target: { value },
         } = event;
@@ -26,6 +39,9 @@ export default function MultipleSelectCheckmarks(props) {
             // On autofill we get a stringified value.
             typeof value === 'string' ? value.split(',') : value,
         );
+        if (event.target.value[0] === undefined && event.target.value.length)
+            setCounter((event.target.value.length) - 1);
+        else setCounter(event.target.value.length);
     };
 
     return (
@@ -36,13 +52,34 @@ export default function MultipleSelectCheckmarks(props) {
                 <Select
                     labelId="demo-multiple-checkbox-label"
                     id="demo-multiple-checkbox"
-                    limitTags={2}
+                    open={open}
+                    onOpen={handleClickOpen}
+                    size={2}
                     multiple
                     value={personName}
                     onChange={handleChange}
                     input={<OutlinedInput label="Tag" />}
-                    renderValue={(selected) => { console.log(selected); return selected.join(", ") }}
-                    MenuProps={{
+                    renderValue={
+                        (selected) => (
+                            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                                {selected.length > 2 ? (
+                                    <div>
+                                        <Chip key={selected[0]} label={selected[0]} style={{ color: 'white' }} />
+                                        <Chip key={selected[1]} label={selected[1]} style={{ color: 'white' }} />
+                                        <Chip key={"+" + (selected.length - 2)} label={'+' + (selected.length - 2)} style={{ color: 'white' }} />
+
+                                    </div>
+                                ) : (
+                                    <div>
+                                        {selected.map((value) => (
+
+                                            <Chip key={value} label={value} style={{ color: 'white' }} />
+                                        ))}
+                                    </div>
+                                )}
+                            </Box>
+                        )
+                    } MenuProps={{
                         style: {
                             maxHeight: 400
                         },
@@ -81,12 +118,12 @@ export default function MultipleSelectCheckmarks(props) {
                         <hr></hr>
                         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '2px' }}>
                             <div>
-                                <Typography style={{ padding: '15px', color: 'GrayText' }} > 4 selected</Typography>
+                                <Typography style={{ padding: '15px', color: 'GrayText' }} > {counter} selected</Typography>
 
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px' }}>
 
-                                <IconButton style={{ color: 'black' }} >
+                                <IconButton style={{ color: 'black' }} onClick={handleClose}  >
                                     <Typography style={{ padding: '2px' }} ><b> Cancel</b></Typography>
 
 

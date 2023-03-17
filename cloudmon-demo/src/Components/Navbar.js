@@ -8,7 +8,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import HomeIcon from '@mui/icons-material/Home';
 import CustomSeparator from './Breadcrumbs.js';
 import Avatar from '@mui/material/Avatar';
-import image from '/Users/rajvibagohil2411/Desktop/Cloudmon-React/cloudmon-demo/src/assets/cards/avatar.jpeg'
+import image from '/Users/rajvibagohil2411/Desktop/cloudmon_react/Cloudmon_react/cloudmon-demo/src/assets/cards/avatar.jpeg'
 import ToggleButton from '@mui/material/ToggleButton';
 import { fontFamily } from '@mui/system';
 

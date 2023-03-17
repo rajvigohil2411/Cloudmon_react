@@ -10,17 +10,8 @@ ChartJS.register(ArcElement,
     Tooltip,
     Legend)
 
-export default function Piechart() {
-    const data = {
-        labels: ['CN1', 'CN2', 'CN3', 'CN4', 'CN5'],
-        datasets: [{
-            label: 'Cost by Namespace',
-            data: [10, 20, 30, 40, 50],
-            backgroundColor: ['#7be0c3', '#255797', '#306dbe', '#438fbe', '#64bdd7'],
-            borderColor: ['#7be0c3', '#255797', '#306dbe', '#438fbe', '#64bdd7'],
+export default function Piechart(props) {
 
-        }]
-    }
     const options = {
         aspectRatio: 1,
 
@@ -38,7 +29,7 @@ export default function Piechart() {
     return (
         <div style={{ padding: '20px' }}>
             <Doughnut
-                data={data}
+                data={props.data}
                 options={options}
             />
 

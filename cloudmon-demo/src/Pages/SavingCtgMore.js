@@ -3,7 +3,6 @@ import Grid from '@mui/material/Grid'
 import Datacard from '../Components/Datacard.js';
 import DoughnutchartCard from '../Components/DoughnutchartCard.js'
 import Dropdown from '../Components/Dropdown.js'
-import chart from "/Users/rajvibagohil2411/Desktop/Cloudmon-React/cloudmon-demo/src/assets/cards/chart.png";
 import BasicTable from '../Components/Table.js';
 import ToggleButtons from '../Components/Toggle.js'
 import IconButton from '@mui/material/IconButton';

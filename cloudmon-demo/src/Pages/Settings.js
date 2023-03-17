@@ -5,9 +5,18 @@ import Grid from '@mui/material/Grid'
 import Datacard from '../Components/Datacard.js';
 import DoughnutchartCard from '../Components/DoughnutchartCard.js'
 import MultipleSelectCheckmarks from '../Components/Dropdown.js'
-import chart from "../assets/cards/chart.png";
+import chart from "/Users/rajvibagohil2411/Desktop/cloudmon_react/Cloudmon_react/cloudmon-demo/src/assets/cards/chart.png"
 import BasicTable from '../Components/Table.js';
+const data1 = {
+    labels: ['CN1', 'CN2', 'CN3', 'CN4', 'CN5', 'CN6'],
+    datasets: [{
+        label: 'Cost by Namespace',
+        data: [10, 20, 30, 40, 50, 23],
+        backgroundColor: ['#7be0c3', '#255797', '#306dbe', '#438fbe', '#64bdd7', '#FFBF00'],
+        borderColor: ['#7be0c3', '#255797', '#306dbe', '#438fbe', '#64bdd7', "#FFBF00"],
 
+    }]
+}
 
 export default function Settings() {
     const [projectName, setProjectName] = React.useState(['Toyota',
@@ -47,7 +56,9 @@ export default function Settings() {
                     />
                 </Grid>
                 <Grid item xs={6}>
-                    <DoughnutchartCard title='Saving Categories' />
+                    <DoughnutchartCard title='Saving Categories'
+                        component_name='Saving Categories'
+                        data={data1} />
                 </Grid>
                 <Grid item xs={12}>
                     <BasicTable title={'Top 10 recommendations'} />

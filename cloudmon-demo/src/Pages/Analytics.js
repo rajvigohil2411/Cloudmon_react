@@ -73,6 +73,16 @@ const data_Barchart1 = {
 
     }]
 };
+const data1 = {
+    labels: ['CN1', 'CN2', 'CN3', 'CN4', 'CN5'],
+    datasets: [{
+        label: 'Cost by Namespace',
+        data: [10, 20, 30, 40, 50, 23],
+        backgroundColor: ['#7be0c3', '#255797', '#306dbe', '#438fbe', '#64bdd7'],
+        borderColor: ['#7be0c3', '#255797', '#306dbe', '#438fbe', '#64bdd7'],
+
+    }]
+}
 const data_Barchart2 = {
     'labels': ['Jharkhand', 'Odisha', 'Gujarat', 'Maharashtra', 'Tamilnadu'],
     datasets: [{
@@ -183,7 +193,8 @@ export default function Analytics() {
 
                 <Grid item xs={6}>
                     <DoughnutchartCard title='Cluster Current Cost'
-                        component_name='Cluster Current Cost' />
+                        component_name='Cluster Current Cost'
+                        data={data1} />
                 </Grid>
                 <Grid item xs={6}>
                     <BarchartCard
@@ -216,7 +227,8 @@ export default function Analytics() {
                 </Grid>
                 <Grid item xs={6}>
                     <DoughnutchartCard title='Top 5 Highest Cost by Label'
-                        component_name='Cost by Label' />
+                        component_name='Cost by Label'
+                        data={data1} />
                 </Grid>
 
             </Grid>
@@ -228,7 +240,7 @@ export default function Analytics() {
 
 
 
-        </div >
+        </div>
     );
 }
 

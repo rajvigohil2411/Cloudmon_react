@@ -29,6 +29,7 @@ export default function Linechart(props) {
             legend: false,
             Filler: true
         },
+        pointRadius: '0',
         scales: {
             x: {
                 grid: {
