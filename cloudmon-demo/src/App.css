@@ -6,18 +6,17 @@
 
   body{
     width: 100%;
-    
+    height: 270vh;
     
 
     background: linear-gradient(
       to top,
       #dee5ed 0%,
-      #dee5ed 60%,
-      #0f2d48 60%,
+      #dee5ed 85%,
+      #0f2d48 85%,
       #0f2d48 100%
     );
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    
 
     
   }
@@ -36,7 +35,7 @@
   .flex-parent-element {
   display: flex;
   padding: 5px;
-  justify-content: center;
+  margin:10px;
   justify-content: space-between;
 
    
@@ -55,6 +54,7 @@
   
   padding: 30px;
   justify-content: center;
+  
   }
 .components{
   display: flex;

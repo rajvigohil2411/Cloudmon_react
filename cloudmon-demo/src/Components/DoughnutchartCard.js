@@ -47,23 +47,38 @@ export default function DoughnutchartCard(props) {
                     </div>
 
                 </div>}
-                {props.component_name === 'Saving Categories' && <div className='flex-parent-element'>
-                    <div>
+                {props.component_name === 'Saving Categories' && <div style={{ display: 'flex' }}>
+                    <div >
                         <Piechart data={props.data} />
                     </div>
 
-                    <div className='first' >
 
+                    <div style={{ justifyItems: 'center' }}>
                         <ul>
-                            <li>Computer Savings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1.9M (20%)</li>
-                            <li>Database Savings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1.9M (20%)</li>
-                            <li>Data Savings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1.9M (20%)</li>
-                            <li>Netwrok Savings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1.9M (20%)</li>
-                            <li>Storage Savings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1.9M (20%)</li>
-                            <li>Other Savings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1.9M (20%)</li>
+                            <li>Computer Savings</li>
+                            <li>Database Savings</li>
+                            <li>Data Savings</li>
+                            <li>Netwrok Savings</li>
+                            <li>Storage Savings</li>
+                            <li>Other Savings</li>
 
                         </ul>
                     </div>
+                    <div>
+                        <ul style={{ listStyle: 'none' }}>
+                            <li>$1.9M (20%)</li>
+                            <li>$1.9M (20%)</li>
+                            <li>$1.9M (20%)</li>
+                            <li>$1.9M (20%)</li>
+                            <li>$1.9M (20%)</li>
+                            <li>$1.9M (20%)</li>
+
+
+                        </ul>
+                    </div>
+
+
+
 
                 </div>}
                 {props.component_name === 'Cost by Label' && <div className='flex-parent-element'>
